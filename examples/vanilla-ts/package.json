@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "@playwright/test": "^1.34.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.9",
+    "youtube-player-plus": "workspace:^"
+  },
+  "name": "vanilla",
+  "private": true,
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "type": "module",
+  "version": "0.0.0"
+}
