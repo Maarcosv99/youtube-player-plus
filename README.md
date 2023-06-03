@@ -22,7 +22,7 @@ Inspired by this package: [yt-player](https://github.com/feross/yt-player)
 
 ## Installation
 
-Use the package manager \[npm\](https://www.npmjs.com/) to install youtube-player-plus.
+Use the package manager [npm](https://www.npmjs.com/) to install youtube-player-plus.
 
 ```plaintext
  npm i youtube-player-plus
@@ -188,7 +188,7 @@ player.removeListener('event-name', eventHandlerFunction);
 
 ## Examples:
 
-*   [vanilla-ts](https://github.com/Maarcosv99/youtube-player-plus/examples/vanilla-ts)
+*   [vanilla-ts](https://github.com/Maarcosv99/youtube-player-plus/tree/main/examples/vanilla-ts)
 
 ## Contributing
 
