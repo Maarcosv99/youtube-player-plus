@@ -3,7 +3,7 @@ export function generateCustomId(): string {
 }
 
 export function loadScript(src: string, attrs?: Record<string, any>, parentNode?: HTMLElement) {
-    return new Promise((resolve, reject) => {
+	return new Promise((resolve, reject) => {
 		const script = document.createElement('script')
 		//script.async = true
 		script.defer = true
@@ -25,5 +25,5 @@ export function loadScript(src: string, attrs?: Record<string, any>, parentNode?
 
 		const node = parentNode || document.head || document.getElementsByTagName('head')[0]
 		node.appendChild(script)
-    })
+	})
 }

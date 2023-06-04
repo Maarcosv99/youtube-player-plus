@@ -1,20 +1,20 @@
 export interface YTPP_Options {
-    width?: number;
-    height?: number;
-    autoplay?: boolean
-    host?: string
-    captions?: string;
-    controls?: boolean;
-    keyboard?: boolean;
-    loop?: boolean;
-    fullscreen?: boolean;
-    annotations?: boolean;
-    modestBranding?: boolean;
-    relatedVideos?: boolean;
-    timeUpdateFrequency?: number;
-    playsInline?: boolean;
-    start?: number;
-    debug?: boolean
+	width?: number;
+	height?: number;
+	autoplay?: boolean
+	host?: string
+	captions?: string;
+	controls?: boolean;
+	keyboard?: boolean;
+	loop?: boolean;
+	fullscreen?: boolean;
+	annotations?: boolean;
+	modestBranding?: boolean;
+	relatedVideos?: boolean;
+	timeUpdateFrequency?: number;
+	playsInline?: boolean;
+	start?: number;
+	debug?: boolean
 }
 
 export type YTPP_Event = 'error' | 'unplayable' | 'timeupdate' | 'unstarted' | 'ended' | 'playing' | 'cued' | 'paused' | 'playbackQualityChange' | 'playbackRateChange' | 'stateChange' | 'ready' | 'buffering'
