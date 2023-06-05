@@ -1,3 +1,4 @@
 packages:
   - "packages/lib"
-  - "examples/vanilla"
+  - "examples/vanilla-ts"
+  - "examples/shadowdom"
