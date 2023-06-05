@@ -125,7 +125,8 @@ export default class YouTubePlayerPlus extends EventEmitter<YTPP_Event> {
 		// if user includes a hardcoded <script> tag in HTML for performance reasons,
 		// another one will not be added.
 		if (!hasScript) {
-			loadScript(YTAPI_SRC).catch(err => {
+			const protocol = window.location.protocol === 'http' ? 'HTTP' : 'HTTPS'
+			loadScript(YTAPI_SRC[protocol]).catch(err => {
 				while (loadIframeAPICallbacks.length) {
 					const loadCallback = loadIframeAPICallbacks.shift()
 					if (loadCallback) loadCallback(undefined, err)
