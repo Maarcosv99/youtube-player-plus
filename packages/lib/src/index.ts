@@ -636,7 +636,7 @@ export default class YouTubePlayerPlus extends EventEmitter<YTPP_Event> {
 	protected _onStateChange(event: YTAPI_Event) {
 		if (this.destroyed) return
 
-		const state = YTAPI_STATES[event.data]
+		const state = YTAPI_STATES[event.data].toLowerCase() as YTPP_Event
 		this._debug('STATE CHANGED:', state)
 		if (state) {
 			/*
@@ -649,8 +649,8 @@ export default class YouTubePlayerPlus extends EventEmitter<YTPP_Event> {
 			}
 
 			// State is in capital letters.
-			this.emit(state.toLowerCase() as YTPP_Event)
-			this.emit('stateChange', state as YTPP_Event)
+			this.emit(state)
+			this.emit('stateChange', state)
 
 			/*
 				When the video changes ('unstarted' or 'cued') or starts ('playing') then a
