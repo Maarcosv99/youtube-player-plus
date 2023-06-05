@@ -1,4 +1,7 @@
-export const YTAPI_SRC = "https://www.youtube.com/iframe_api";
+export enum YTAPI_SRC {
+	HTTPS = "https://www.youtube.com/iframe_api",
+	HTTP = "http://www.youtube.com/iframe_api"
+}
 
 export enum YTAPI_STATES {
 	UNSTARTED = -1,

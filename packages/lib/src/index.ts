@@ -29,7 +29,7 @@ const loadIframeAPICallbacks: ((api?: YTAPI_API, err?: Error) => void)[] = []
  * @param {YTPP_Options} options
  */
 export default class YouTubePlayerPlus extends EventEmitter<YTPP_Event> {
-	private _id?: string = undefined;
+	private _element?: Element = undefined;
 	private _options: YTPP_Options;
 	private _api?: YTAPI_API = undefined
 	private _player?: YTAPI_Player = undefined
@@ -50,9 +50,7 @@ export default class YouTubePlayerPlus extends EventEmitter<YTPP_Event> {
 			: element;
 
 		if (!elem) throw new Error(YTPP_ERROR_MESSAGES.ELEMENT_NOT_FOUND);
-
-		if (elem.id) this._id = elem.id;
-		else this._id = elem.id = `yt-iframe-${generateCustomId()}`;
+		this._element = elem
 
 		/*
 			Extract from:
@@ -149,14 +147,14 @@ export default class YouTubePlayerPlus extends EventEmitter<YTPP_Event> {
 
 	protected _createPlayer(videoId: string) {
 		if (this.destroyed) return
-		if (!this._id) return
+		if (!this._element) return
 		if (!this._api?.Player) return
 		if (!this._options) return
-		
+
 		const options = this._options
 		const Player = this._api?.Player
 
-		this._player = new Player(this._id, {
+		this._player = new Player(this._element, {
 			width: options.width || 640,
 			height: options.height || 360,
 			videoId: videoId,
@@ -572,7 +570,7 @@ export default class YouTubePlayerPlus extends EventEmitter<YTPP_Event> {
 		}
 
 		this.videoId = undefined
-		this._id = undefined
+		this._element = undefined
 		this._options = {} as YTPP_Options
 		this._api = undefined
 		this._player = undefined

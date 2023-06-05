@@ -3,7 +3,7 @@ import type { Unpromisify } from "./utils"
 
 export type YTAPI_Player = Unpromisify<YouTubePlayer>
 export interface YTAPI_API {
-	Player: new (elementId: string, options: YTAPI_PlayerOptions) => YTAPI_Player
+	Player: new (elementId: string | HTMLElement | Element, options: YTAPI_PlayerOptions) => YTAPI_Player
 }
 
 export interface YTAPI_PlayerOptions {
