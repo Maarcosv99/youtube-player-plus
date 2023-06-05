@@ -2,7 +2,7 @@ import { YTAPI_API } from '@/types'
 
 declare global {
     interface Window {
-        YT: YTAPI_API,
+        YT?: YTAPI_API,
         onYouTubeIframeAPIReady?: any
     }
 }
