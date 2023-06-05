@@ -4,7 +4,7 @@ import type { YTAPI_PlaybackQuality, YTAPI_PlaybackRate } from 'youtube-player-p
 const player = new YouTubePlayerPlus('#app', { debug: true })
 player.load('KGQdWaD6XHM')
 
-const player2 = new YouTubePlayerPlus('#app2', { debug: false })
+const player2 = new YouTubePlayerPlus(document.getElementById('app2')!)
 player2.load('KGQdWaD6XHM')
 
 player.on('ready', () => console.log('Player 01 is ready'))
