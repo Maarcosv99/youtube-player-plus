@@ -5,8 +5,7 @@ export function generateCustomId(): string {
 export function loadScript(src: string, attrs?: Record<string, any>, parentNode?: HTMLElement) {
 	return new Promise((resolve, reject) => {
 		const script = document.createElement('script')
-		//script.async = true
-		script.defer = true
+		script.async = true
 		script.src = src
 
 		Object.entries(attrs || {}).forEach(([key, value]) => {
