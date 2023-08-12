@@ -20,7 +20,7 @@
     "typescript": "^5.0.2"
   },
   "engines": {
-    "node": "16.x || 18.x"
+    "node": ">=16"
   },
   "eslintConfig": {
     "extends": [
