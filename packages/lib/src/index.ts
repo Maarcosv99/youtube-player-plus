@@ -117,7 +117,7 @@ export default class YouTubePlayerPlus extends EventEmitter<YTPP_Event> {
 		// Otherwise, queue callback until API is loaded.
 		loadIframeAPICallbacks.push(callback)
 
-		const hasScript = document.querySelector(`script[src="${YTAPI_SRC}"]`)
+		const hasScript = document.querySelector(`script[src="${YTAPI_SRC.HTTPS}"]`) || document.querySelector(`script[src="${YTAPI_SRC.HTTP}"]`)
 
 		// If API <script> tag is not present in the page, inject it. Ensures that
 		// if user includes a hardcoded <script> tag in HTML for performance reasons,
